@@ -1,4 +1,4 @@
-tokens/
-node_modules/
 .env
+node_modules/
 storage/
+tokens/

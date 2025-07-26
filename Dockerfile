@@ -6,7 +6,6 @@ RUN apt-get update && apt-get install -y chromium \
   rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
-
 COPY package*.json ./
 RUN npm ci --omit=dev
 
@@ -16,6 +15,5 @@ ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=1 \
     CHROME_BIN=/usr/bin/chromium \
     PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium \
     PUPPETEER_ARGS="--no-sandbox --disable-setuid-sandbox --disable-dev-shm-usage"
-
 
 CMD ["node", "index.js"]
