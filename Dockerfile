@@ -1,9 +1,10 @@
 FROM node:20-bullseye
 
-RUN apt-get update && apt-get install -y chromium \
-  fonts-liberation libatk-bridge2.0-0 libgtk-3-0 libnss3 libx11-xcb1 \
-  libxcomposite1 libxdamage1 libxrandr2 xdg-utils && \
-  rm -rf /var/lib/apt/lists/*
+RUN apt-get update && \
+    apt-get install -y chromium \
+    fonts-liberation libatk-bridge2.0-0 libgtk-3-0 libnss3 libx11-xcb1 \
+    libxcomposite1 libxdamage1 libxrandr2 xdg-utils \
+    && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 COPY package*.json ./
